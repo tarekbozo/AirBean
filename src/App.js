@@ -1,11 +1,22 @@
-import RouterPage from './route/RouterPage';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import Products from './components/Products/Products';
+import Cart from './components/Cart/Cart';
 
-const App = () => {
+function App() {
   return (
-    <div className='App'>
-      <RouterPage />
-    </div>
+    <Router>
+      <div className='app'>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={Products} />
+          <Route exact path='/cart' component={Cart} />
+        </Switch>
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
