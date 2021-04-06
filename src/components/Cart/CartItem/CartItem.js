@@ -35,6 +35,7 @@ const CartItem = ({ item }) => {
             onChange={onChangeHandler}
           />
         </div>
+
         <button
           onClick={() => dispatch(removeFromCart(item.id))}
           className={styles.actions__deleteItemBtn}

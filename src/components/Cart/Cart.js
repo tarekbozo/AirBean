@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Cart.module.css';
 import { useSelector } from 'react-redux';
 import CartItem from './CartItem/CartItem';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cart = useSelector((state) => state.shop.cart);
@@ -34,9 +35,9 @@ const Cart = () => {
           <span>TOTAL: ({totalItems} items)</span>
           <span>{totalPrice} kr </span>
         </div>
-        <button className={styles.summary__checkoutBtn}>
-          Proceed To Checkout
-        </button>
+        <Link to='/chekout' className={styles.summary__checkoutBtn}>
+          Tack my money
+        </Link>
       </div>
     </div>
   );
