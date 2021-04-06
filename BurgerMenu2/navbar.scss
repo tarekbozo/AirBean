@@ -1,0 +1,100 @@
+.navigation {
+  display: grid;
+  padding: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+
+  &__list {
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    &-item {
+      display: inline;
+      margin-left: 2rem;
+      text-decoration: none;
+    }
+    &-link {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 2rem;
+      line-height: 4.5rem;
+      &:hover {
+        color: rgba(241, 232, 232, 0.356);
+      }
+    }
+
+    @media screen and (max-width: 996px) {
+      display: grid;
+      position: absolute;
+      top: 8rem;
+      width: 90vw;
+      padding: 20px;
+      right: 0px;
+      background: rgba(15, 14, 71, 0.3);
+      box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
+      backdrop-filter: blur(40px) brightness(80%) saturate(150%);
+      border-radius: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    }
+  }
+  .social-warpper {
+    background: none;
+    box-shadow: none;
+    backdrop-filter: unset;
+    margin-top: 4rem;
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+      background: rgba(15, 14, 71, 0.3);
+      box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset;
+      backdrop-filter: blur(40px) brightness(80%) saturate(150%);
+      border-radius: 2rem;
+      padding: 1.5rem 4rem 1.5rem 1.5rem;
+      margin: 0 5rem;
+    }
+  }
+
+  &__logo {
+    grid-row: 1;
+    margin-left: 5rem;
+    align-self: center;
+    &-link {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 4rem;
+    }
+  }
+
+  &__menu-toggle {
+    z-index: 2;
+    position: absolute;
+    top: 4%;
+    right: 10%;
+    transform: translate(5%, 30%);
+    &-bar {
+      width: 2.5rem;
+      height: 0.2rem;
+      margin: 0.5rem auto;
+      transition: all 0.3s ease-in-out;
+      background-color: #ffffff;
+      @media screen and (max-width: 48rem) {
+        display: block;
+        cursor: pointer;
+      }
+    }
+  }
+  .active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.is-active .navigation__menu-toggle-bar:nth-child(1) {
+  transform: translateY(0.7rem) rotate(45deg);
+}
+.is-active .navigation__menu-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.is-active .navigation__menu-toggle-bar:nth-child(3) {
+  transform: translateY(-0.7rem) rotate(-45deg);
+}

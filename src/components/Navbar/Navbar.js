@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import { ReactComponent as Header } from '../../assets/header.svg';
+import { IoBagOutline } from 'react-icons/all';
 
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
-const Navbar = ({ cart }) => {
+const Navbar = () => {
+  const cart = useSelector((state) => state.shop.cart);
   const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
@@ -18,23 +22,11 @@ const Navbar = ({ cart }) => {
 
   return (
     <div className={styles.navbar}>
-      <Link to='/'>
-        <h2 className={styles.navbar__logo}>AirBean</h2>
-      </Link>
-      <Link to='/about'>
-        <h2 className={styles.navbar__logo}>about</h2>
-      </Link>
-      <Link to='/products'>
-        <h2 className={styles.navbar__logo}>Menu</h2>
-      </Link>
+      <Header />
+      <BurgerMenu />
       <Link to='/cart'>
         <div className={styles.navbar__cart}>
-          <h3 className={styles.cart__title}>Cart</h3>
-          <img
-            className={styles.cart__image}
-            src='https://image.flaticon.com/icons/svg/102/102276.svg'
-            alt='shopping cart'
-          />
+          <IoBagOutline className={styles.cart__image} />
           <div className={styles.cart__counter}>{cartCount}</div>
         </div>
       </Link>
@@ -42,10 +34,4 @@ const Navbar = ({ cart }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    cart: state.shop.cart,
-  };
-};
-
-export default connect(mapStateToProps)(Navbar);
+export default Navbar;

@@ -1,0 +1,25 @@
+.landing {
+  background: #38846d;
+  position: absolute;
+  width: 375px;
+  height: 812px;
+}
+.introL {
+  width: 808px;
+  height: 169px;
+  left: 40%;
+  top: 808px;
+}
+.introR {
+  width: 812px;
+  height: 143px;
+  left: 232px;
+  top: 0px;
+  position: absolute;
+}
+
+.logo {
+  position: relative;
+  top: 149px;
+  left: 68px;
+}
