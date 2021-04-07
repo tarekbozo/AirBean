@@ -30,10 +30,9 @@ const Cart = () => {
         ))}
       </div>
       <div className={styles.cart__summary}>
-        <h4 className={styles.summary__title}>Cart Summary</h4>
         <div className={styles.summary__price}>
-          <span>TOTAL: ({totalItems} items)</span>
-          <span>{totalPrice} kr </span>
+          <h5>TOTAL: ({totalItems} items)</h5>
+          <span className={styles.summary__total}>{totalPrice} kr </span>
         </div>
         <Link to='/chekout' className={styles.summary__checkoutBtn}>
           Tack my money

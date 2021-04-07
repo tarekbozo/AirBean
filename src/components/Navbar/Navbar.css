@@ -15,7 +15,6 @@
   right: 40.9%;
   top: 16px;
   cursor: pointer;
-  z-index: 2;
 }
 
 .navbar__logo {
@@ -64,14 +63,13 @@
   visibility: visible;
   z-index: 11;
   overflow-x: hidden;
-  /* transition: all 0.5s ease; */
   position: absolute;
   width: 341px;
   height: 658.96px;
-  left: 33%;
+  left: 41.1%;
   top: 77.04px;
   background: #ffffff;
-  box-shadow: 0px 0px 32px rgb(0 0 0 / 64%);
+  border-radius: 4px;
 }
 
 .navigation__menu-toggle {
@@ -95,6 +93,17 @@
   background-color: rgba(0, 0, 0, 0.8);
   overflow-x: hidden;
   z-index: 10;
+}
+.overlayCart:after {
+  content: ' ';
+  position: absolute;
+  left: 88%;
+  top: 63px;
+  border-top: none;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 15px solid #ffffff;
+  border-radius: 2px;
 }
 
 .hideOverlay {

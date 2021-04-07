@@ -18,14 +18,18 @@ const CartItem = ({ item }) => {
 
   return (
     <div className={styles.cartItem}>
+      <button
+        onClick={() => dispatch(removeFromCart(item.id))}
+        className={`${styles.buttons__btn} ${styles.buttons__add}`}
+      >
+        -
+      </button>
       <div className={styles.cartItem__details}>
         <p className={styles.details__title}>{item.title}</p>
-        <p className={styles.details__desc}>{item.description}</p>
         <p className={styles.details__price}>{item.price} kr</p>
       </div>
       <div className={styles.cartItem__actions}>
         <div className={styles.cartItem__qty}>
-          <label htmlFor='qty'>Qty</label>
           <input
             min='1'
             type='number'
@@ -35,16 +39,6 @@ const CartItem = ({ item }) => {
             onChange={onChangeHandler}
           />
         </div>
-
-        <button
-          onClick={() => dispatch(removeFromCart(item.id))}
-          className={styles.actions__deleteItemBtn}
-        >
-          <img
-            src='https://image.flaticon.com/icons/svg/709/709519.svg'
-            alt=''
-          />
-        </button>
       </div>
     </div>
   );

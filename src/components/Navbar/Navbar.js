@@ -5,12 +5,12 @@ import { IoBagOutline } from 'react-icons/all';
 import { useSelector } from 'react-redux';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import Cart from '../Cart/Cart';
 
 const Navbar = () => {
-  const [openCart, setOpenCart] = useState(true);
-  const cart = useSelector((state) => state.shop.cart);
+  const [openCart, setOpenCart] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  const cart = useSelector((state) => state.shop.cart);
 
   useEffect(() => {
     let count = 0;
@@ -34,29 +34,9 @@ const Navbar = () => {
         onClick={() => setOpenCart(!openCart)}
         className={openCart ? 'overlayCart' : 'hideOverlay'}
       ></div>
-      <ul className={openCart ? 'activeCart ' : 'navigation__listCart'}>
-        <li className='navigation__list-item'>
-          <Link to='/products' className='navigation__list-link'>
-            Meny
-          </Link>
-        </li>
-        <li className='navigation__list-item'>
-          <Link to='/about' className='navigation__list-link'>
-            vårt kaffe
-          </Link>
-        </li>
-
-        <li className='navigation__list-item'>
-          <Link to='/' className='navigation__list-link'>
-            Min profil
-          </Link>
-        </li>
-        <li className='navigation__list-item'>
-          <Link to='/' className='navigation__list-link'>
-            Orderstatus
-          </Link>
-        </li>
-      </ul>
+      <div className={openCart ? 'activeCart ' : 'navigation__listCart'}>
+        <Cart />
+      </div>
     </div>
   );
 };
