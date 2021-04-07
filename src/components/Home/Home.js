@@ -3,6 +3,7 @@ import './Home.css';
 import headerL from '../../assets/header.png';
 import headerR from '../../assets/headerR.png';
 import { ReactComponent as Logo } from '../../assets/airbean-landing.svg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -10,9 +11,9 @@ const Home = () => {
       <div className='introL'>
         <img src={headerL} alt='' />
       </div>
-      <div className='logo'>
+      <Link to='/products' className='logo'>
         <Logo />
-      </div>
+      </Link>
       <div className='introR'>
         <img src={headerR} alt='' />
       </div>

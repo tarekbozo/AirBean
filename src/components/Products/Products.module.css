@@ -1,7 +1,16 @@
 .products {
-  width: 100%;
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 375px;
+  height: 812px;
+  position: absolute;
+  top: 0;
+  background: #f3e4e1;
+  z-index: -1;
+}
+
+.menuLogo {
+  text-align: center;
+  width: 374px;
+  font-size: 42px;
+  font-weight: bold;
+  margin-top: 20px;
 }

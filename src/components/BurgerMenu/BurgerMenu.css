@@ -58,7 +58,6 @@
 .active {
   opacity: 1;
   visibility: visible;
-
   width: 375px;
   height: 812px;
   position: fixed;
